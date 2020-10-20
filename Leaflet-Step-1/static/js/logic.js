@@ -1,4 +1,8 @@
+console.log("hello");
+var API_KEY = "pk.eyJ1Ijoic2FyYWhncmFudDExIiwiYSI6ImNrZ2k1dXJtNTFrbXAycWxqN24yMXNma3kifQ.RfqdT0P8DrPVL9ZcW_AItw";
+
 var URL ="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson"
+var tectonicURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json"
 
 function createMap(earthquakedata) {
     // Create the tile layer that will be the light background of our map
@@ -18,6 +22,16 @@ function createMap(earthquakedata) {
         accessToken: API_KEY
         });
 
+    // Create the map object with options
+    var map = L.map("map", {
+        center: [37.09, -95.71],
+        zoom: 3,
+        layers: [lightmap, earthquakedata]
+      });
+    
+    var earthquakes = new L.LayerGroup();
+    var tectonicplates = new L.LayerGroup();
+
     // Create a baseMaps object to hold the lightmap and satellitemap layers
     var baseMaps = {
         "Light Map": lightmap,
@@ -26,15 +40,9 @@ function createMap(earthquakedata) {
 
   // Create an overlayMaps object to hold the quakeData layer
     var overlayMaps = {
-        "Earthquakes in Last 30 Days": earthquakedata
+        "Earthquakes in Last 30 Days": earthquakedata,
+        "Tectonic Plates": tectonicplates
     };
-
-    // Create the map object with options
-    var map = L.map("map", {
-        center: [37.09, -95.71],
-        zoom: 3,
-        layers: [lightmap, earthquakedata]
-      });
     
       // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
       L.control.layers(baseMaps, overlayMaps, {
@@ -127,3 +135,7 @@ function createMarkers(response) {
 
 // Perform an API call to the Earthquake API to get station information. Call createMarkers when complete
 d3.json(URL, createMarkers);
+d3.json(tectonicURL, function(plate){
+    L.geoJson(plate, {color: "orange", weight: 2}).addTo(tectonicplates);
+    tectonicplates.addTo(map);
+});
