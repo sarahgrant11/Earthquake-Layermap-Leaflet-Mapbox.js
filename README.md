@@ -16,4 +16,5 @@ To create a an interactive world map that shows the correlations between tectoni
 * Added a tooltip in the scrollover that indicates the location and magnitude of the earthquake. 
 * Added a legend for context, as well as layer controls to the map. 
 
-## Tech Environment: Mapbox, D3, Leaflet, Javascript, HTML5, GitHub, VSCode
+## Tech Environment: 
+Mapbox, D3, Leaflet, Javascript, HTML5, GitHub, VSCode
