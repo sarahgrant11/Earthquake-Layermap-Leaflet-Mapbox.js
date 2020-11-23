@@ -3,7 +3,7 @@
 ![1-Logo](Images/1-Logo.png)
 
 ## Object 
-To create a an interactive world map that shows the correlations between tectonic plates and seismic activity over the last week, by connecting geoJSON API using D3.
+To create an interactive world map that shows the correlation between tectonic plates and seismic activity over the last week, by connecting a geoJSON API using D3.
 
 ## Data Set 
 - Seismic activity: United States Geological Survey (updated every five minutes) via USGS GeoJSON Feed [https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php]
