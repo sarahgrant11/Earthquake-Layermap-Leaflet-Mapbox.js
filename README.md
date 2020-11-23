@@ -1,4 +1,4 @@
-# Mapping Earthqake Data With Leaflet, Mapbox
+# Mapping Earthquake Data With Leaflet, Mapbox
 
 ![1-Logo](Images/1-Logo.png)
 
