@@ -5,4 +5,3 @@ config.py
 **/.ipynb_checkpoints
 api_keys*
 config.py
-config.js
