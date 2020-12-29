@@ -1,4 +1,4 @@
-var apiKey = "pk.eyJ1Ijoic2FyYWhncmFudDExIiwiYSI6ImNrZ2k1cTM0cjAwMjQyeXFlOW1lNjh3aHQifQ.DJdUKgk9W5lTPDGBrq8FXw";
+var apiKey = "pk.eyJ1Ijoic2FyYWhncmFudDExIiwiYSI6ImNrZ2k1cTM0cjAwMjQyeXFlOW1lNjh3aHQifQ.DJdUKgk9W5lTPDGBrq8FXw"
 
 var graymap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
